@@ -1,0 +1,703 @@
+:root {
+  --primary: #2f69f4;
+  --bg: #f1f3f5;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #dbe1e8;
+  --code: #1e2b45;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+}
+
+.sidebar {
+  width: 325px;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  padding: 28px 24px;
+  overflow-y: auto;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.sidebar-header .brand {
+  margin-bottom: 0;
+}
+
+.close-btn {
+  display: none;
+}
+
+.brand {
+  color: var(--primary);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.nav-group {
+  margin-bottom: 26px;
+}
+
+.group-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: 1.6px;
+  margin-bottom: 12px;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  color: #1f2937;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #eef2ff;
+}
+
+.nav-item.active {
+  background: #dbe7ff;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 64px 74px;
+}
+
+.lesson {
+  max-width: 900px;
+}
+
+.lesson-title {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 28px;
+}
+
+.mentor-box {
+  background: #e9edf2;
+  border-left: 6px solid var(--primary);
+  border-radius: 14px;
+  padding: 18px 24px;
+  margin-bottom: 28px;
+  font-size: 29px;
+  line-height: 1.45;
+}
+
+.section-heading {
+  font-size: 39px;
+  font-weight: 700;
+  margin: 22px 0 14px;
+}
+
+.section-text {
+  font-size: 30px;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.key-list {
+  margin: 10px 0 26px 30px;
+}
+
+.key-list li {
+  font-size: 29px;
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+
+.code-block {
+  background: var(--code);
+  color: #f8fafc;
+  border-radius: 18px;
+  padding: 24px 28px;
+  margin: 20px 0 30px;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: "Fira Code", monospace;
+  font-size: 24px;
+  line-height: 1.65;
+}
+
+.challenge-box {
+  border: 3px solid var(--primary);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-top: 22px;
+  background: #f9fbff;
+}
+
+.challenge-title {
+  font-size: 33px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.challenge-text {
+  font-size: 27px;
+  line-height: 1.55;
+  color: #334155;
+}
+
+@media (max-width: 1200px) {
+  .brand {
+    font-size: 30px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  .lesson-title {
+    font-size: 42px;
+  }
+
+  .mentor-box,
+  .section-text,
+  .key-list li,
+  .challenge-text {
+    font-size: 22px;
+  }
+
+  .section-heading,
+  .challenge-title {
+    font-size: 28px;
+  }
+
+  .code-block code {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .mobile-brand {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border: none;
+    z-index: 200;
+    background: var(--surface);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding: 24px 20px;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+  }
+
+  .content-area {
+    padding: 28px 20px;
+  }
+
+  .brand {
+    font-size: 26px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  .lesson-title {
+    font-size: 34px;
+  }
+}
+
+.content-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-light) 100%
+  );
+  color: white;
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Content Container */
+.content-container {
+  flex: 1;
+  padding: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  margin: 2rem 0 1.5rem 0;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem 0;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem 0;
+  color: var(--primary);
+}
+
+p {
+  color: var(--text-medium);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* ==================== LISTS ==================== */
+ul,
+ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+  line-height: 1.9;
+}
+
+li {
+  color: var(--text-medium);
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+li strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ==================== MENTOR CARD ==================== */
+.mentor-card {
+  background: linear-gradient(135deg, #eef2ff 0%, #f0f9ff 100%);
+  border: 2px solid rgba(37, 99, 235, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mentor-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.05), transparent);
+  border-radius: 50%;
+  transform: translate(50px, -50px);
+}
+
+.mentor-card strong {
+  color: var(--primary);
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mentor-card p {
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== CODE BLOCKS ==================== */
+pre {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #f8fafc;
+  padding: 2rem;
+  border-radius: 14px;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 2.5rem 0;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+pre::before {
+  content: "< CODE >";
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  color: rgba(100, 200, 200, 0.5);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+code.inline {
+  background: var(--bg-secondary);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ==================== CHALLENGE BOX ==================== */
+.challenge-box {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f3fce8 100%);
+  border: 2px solid var(--accent-success);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-top: 3rem;
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.challenge-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1), transparent);
+  border-radius: 50%;
+  transform: translate(50px, -50px);
+}
+
+.challenge-box h4 {
+  color: var(--accent-success);
+  font-size: 1.15rem;
+  margin: 0 0 1.2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.challenge-box ul {
+  margin: 1rem 0;
+}
+
+.challenge-box li {
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== PITFALL BOX ==================== */
+.pitfall-box {
+  background: linear-gradient(135deg, #fef9e7 0%, #fef3c7 100%);
+  border: 2px solid rgba(245, 158, 11, 0.3);
+  border-left: 5px solid var(--accent-warning);
+  border-radius: 14px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.pitfall-box::before {
+  content: "⚠️";
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  opacity: 0.15;
+}
+
+.pitfall-box strong {
+  color: #92400e;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.pitfall-box p {
+  color: #78350f;
+  font-weight: 500;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== SCROLLBAR STYLING ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: background-color var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-light);
+  background-clip: content-box;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 320px;
+  }
+
+  .content-container {
+    padding: 2.5rem;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 280px;
+  }
+
+  .content-header {
+    padding: 2.5rem 2rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    max-height: none;
+  }
+
+  .main-content {
+    height: auto;
+  }
+
+  .content-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .content-container {
+    padding: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .mentor-card,
+  .challenge-box,
+  .pitfall-box {
+    padding: 1.5rem;
+  }
+
+  .nav-section {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  pre {
+    font-size: 0.8rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.1rem;
+  }
+}
