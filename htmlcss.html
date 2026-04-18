@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StudBridge - Learn HTML and CSS with clear explanations and simple examples."
+    />
+    <title>StudBridge | HTML & CSS Learning Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="htmlcss.css" />
+  </head>
+  <body>
+    <header class="mobile-header">
+      <h1 class="brand mobile-brand">StudBridge</h1>
+      <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="brand">StudBridge</h1>
+        <button id="close-btn" class="close-btn" aria-label="Close Menu">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="28"
+            height="28"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <section class="nav-group">
+          <h2 class="group-title">HTML ESSENTIALS</h2>
+          <button class="nav-item active" data-topic="semantic">
+            Semantic Mastery
+          </button>
+          <button class="nav-item" data-topic="boilerplate">
+            HTML Boilerplate
+          </button>
+          <button class="nav-item" data-topic="headings">
+            Headings & Paragraphs
+          </button>
+          <button class="nav-item" data-topic="divspan">Divs & Spans</button>
+          <button class="nav-item" data-topic="lists">Lists</button>
+          <button class="nav-item" data-topic="links">Links</button>
+          <button class="nav-item" data-topic="forms">Pro Forms</button>
+          <button class="nav-item" data-topic="tables">Tables</button>
+          <button class="nav-item" data-topic="media">Media</button>
+          <button class="nav-item" data-topic="iframes">Iframes</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">CSS ENGINEERING</h2>
+          <button class="nav-item" data-topic="selectors">Selectors</button>
+          <button class="nav-item" data-topic="typography">Typography</button>
+          <button class="nav-item" data-topic="colors">
+            Colors & Backgrounds
+          </button>
+          <button class="nav-item" data-topic="boxmodel">Box Model</button>
+          <button class="nav-item" data-topic="flexbox">Flexbox Layouts</button>
+          <button class="nav-item" data-topic="grid">Grid Architecture</button>
+          <button class="nav-item" data-topic="position">Positioning</button>
+          <button class="nav-item" data-topic="responsive">
+            Responsive Design
+          </button>
+          <button class="nav-item" data-topic="transitions">Transitions</button>
+          <button class="nav-item" data-topic="hover">Hover Effects</button>
+          <button class="nav-item" data-topic="keyframes">
+            Motion & Keyframes
+          </button>
+        </section>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <div id="lesson" class="lesson"></div>
+    </main>
+
+    <script src="htmlcss.js"></script>
+  </body>
+</html>

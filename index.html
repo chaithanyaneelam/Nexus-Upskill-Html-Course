@@ -3,107 +3,461 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nexus Upskill - Learn HTML and CSS with clear explanations and simple examples."
-    />
-    <title>Nexus Upskill | HTML & CSS Learning Hub</title>
+    <title>Nexus Upskill | Web Development Documentation</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="design.css" />
+    <style>
+      :root {
+        --primary: #4f46e5;
+        --primary-dark: #4338ca;
+        --secondary: #10b981;
+        --bg-color: #f8fafc;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --card-bg: #ffffff;
+        --border: #e2e8f0;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--card-bg);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, var(--card-bg) 0%, #eef2ff 100%);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: var(--text-main);
+        letter-spacing: -0.025em;
+      }
+
+      .hero h1 span {
+        color: var(--primary);
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+      }
+
+      .grid-container {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3.5rem;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-color: var(--primary);
+      }
+
+      .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+        color: white;
+      }
+
+      .html-css-icon {
+        background: linear-gradient(135deg, #e34f26, #1572b6);
+      }
+      .js-icon {
+        background: linear-gradient(135deg, #f7df1e, #d4b800);
+        color: #000;
+      }
+      .react-icon {
+        background: linear-gradient(135deg, #61dafb, #00b3e6);
+        color: #000;
+      }
+      .node-icon {
+        background: linear-gradient(135deg, #339933, #226622);
+      }
+      .mysql-icon {
+        background: linear-gradient(135deg, #4479a1, #00618a);
+      }
+
+      .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .card-link {
+        color: var(--primary);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: auto;
+      }
+
+      .card-link svg {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.2s;
+      }
+
+      .card:hover .card-link svg {
+        transform: translateX(4px);
+      }
+
+      footer {
+        background-color: var(--text-main);
+        color: white;
+        text-align: center;
+        padding: 3rem 0;
+        margin-top: auto;
+      }
+
+      footer p {
+        color: #94a3b8;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .hero {
+          padding: 4rem 1.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="mobile-header">
-      <h1 class="brand mobile-brand">NEXUS UPSKILL</h1>
-      <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          width="28"
-          height="28"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-      </button>
-    </header>
-
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <h1 class="brand">NEXUS UPSKILL</h1>
-        <button id="close-btn" class="close-btn" aria-label="Close Menu">
+    <header>
+      <div class="container header-content">
+        <a href="index.html" class="logo">
           <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            viewBox="0 0 24 24"
-            width="28"
-            height="28"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+          Nexus Upskill
+        </a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Master <span>Web Development</span></h1>
+        <p>
+          Your premium, all-in-one documentation hub for building modern,
+          scalable, and stunning web applications.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid-container container">
+      <h2 class="section-title">Explore Documentation</h2>
+
+      <div class="cards-grid">
+        <!-- HTML/CSS -->
+        <a href="htmlcss.html" class="card">
+          <div class="icon-wrapper html-css-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+              ></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+          </div>
+          <h3>HTML & CSS</h3>
+          <p>
+            Learn the building blocks of the web. Master semantic markup and
+            responsive, beautiful styling.
+          </p>
+          <div class="card-link">
+            Start Learning
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- JavaScript -->
+        <a href="javascript.html" class="card">
+          <div class="icon-wrapper js-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
               stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
+            >
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3>JavaScript</h3>
+          <p>
+            Dive into client-side programming. Make your websites interactive,
+            dynamic, and powerful.
+          </p>
+          <div class="card-link">
+            Start Learning
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- React -->
+        <a href="react.html" class="card">
+          <div class="icon-wrapper react-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="10"
+                ry="4"
+                transform="rotate(45 12 12)"
+              ></ellipse>
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="10"
+                ry="4"
+                transform="rotate(-45 12 12)"
+              ></ellipse>
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="10"
+                ry="4"
+                transform="rotate(90 12 12)"
+              ></ellipse>
+            </svg>
+          </div>
+          <h3>React</h3>
+          <p>
+            Build modern user interfaces with components, hooks, and scalable
+            state management.
+          </p>
+          <div class="card-link">
+            Start Learning
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Node.js -->
+        <a href="nodejs.html" class="card">
+          <div class="icon-wrapper node-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h3>Node.js</h3>
+          <p>
+            Master backend JavaScript. Create scalable servers, REST APIs, and
+            handle asynchronous events.
+          </p>
+          <div class="card-link">
+            Start Learning
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- MySQL -->
+        <a href="mysql.html" class="card">
+          <div class="icon-wrapper mysql-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+          </div>
+          <h3>MySQL</h3>
+          <p>
+            Deep dive into relational databases. Design robust schemas, write
+            complex queries, and manage data.
+          </p>
+          <div class="card-link">
+            Start Learning
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
       </div>
+    </section>
 
-      <nav class="sidebar-nav">
-        <section class="nav-group">
-          <h2 class="group-title">HTML ESSENTIALS</h2>
-          <button class="nav-item active" data-topic="semantic">
-            Semantic Mastery
-          </button>
-          <button class="nav-item" data-topic="boilerplate">
-            HTML Boilerplate
-          </button>
-          <button class="nav-item" data-topic="headings">
-            Headings & Paragraphs
-          </button>
-          <button class="nav-item" data-topic="divspan">Divs & Spans</button>
-          <button class="nav-item" data-topic="lists">Lists</button>
-          <button class="nav-item" data-topic="links">Links</button>
-          <button class="nav-item" data-topic="forms">Pro Forms</button>
-          <button class="nav-item" data-topic="tables">Tables</button>
-          <button class="nav-item" data-topic="media">Media</button>
-          <button class="nav-item" data-topic="iframes">Iframes</button>
-        </section>
-
-        <section class="nav-group">
-          <h2 class="group-title">CSS ENGINEERING</h2>
-          <button class="nav-item" data-topic="selectors">Selectors</button>
-          <button class="nav-item" data-topic="typography">Typography</button>
-          <button class="nav-item" data-topic="colors">
-            Colors & Backgrounds
-          </button>
-          <button class="nav-item" data-topic="boxmodel">Box Model</button>
-          <button class="nav-item" data-topic="flexbox">Flexbox Layouts</button>
-          <button class="nav-item" data-topic="grid">Grid Architecture</button>
-          <button class="nav-item" data-topic="position">Positioning</button>
-          <button class="nav-item" data-topic="responsive">
-            Responsive Design
-          </button>
-          <button class="nav-item" data-topic="transitions">Transitions</button>
-          <button class="nav-item" data-topic="hover">Hover Effects</button>
-          <button class="nav-item" data-topic="keyframes">
-            Motion & Keyframes
-          </button>
-        </section>
-      </nav>
-    </aside>
-
-    <main class="content-area">
-      <div id="lesson" class="lesson"></div>
-    </main>
-
-    <script src="index.js"></script>
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Nexus Upskill. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

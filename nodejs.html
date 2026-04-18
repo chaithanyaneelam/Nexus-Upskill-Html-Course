@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StudBridge - Learn Node.js from beginner to advanced level with interactive examples."
+    />
+    <title>StudBridge | Node.js Learning Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="nodejs.css" />
+  </head>
+  <body>
+    <header class="mobile-header">
+      <h1 class="brand mobile-brand">StudBridge</h1>
+      <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="brand">StudBridge</h1>
+        <button id="close-btn" class="close-btn" aria-label="Close Menu">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="28"
+            height="28"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <section class="nav-group">
+          <h2 class="group-title">GETTING STARTED</h2>
+          <button class="nav-item active" data-topic="intro">
+            What is Node.js?
+          </button>
+          <button class="nav-item" data-topic="setup">Setup & Install</button>
+          <button class="nav-item" data-topic="commands">
+            Terminal Commands
+          </button>
+          <button class="nav-item" data-topic="globals">Global Objects</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">CORE MODULES & DATA</h2>
+          <button class="nav-item" data-topic="json">What is JSON?</button>
+          <button class="nav-item" data-topic="modules">
+            CommonJS vs ES Modules
+          </button>
+          <button class="nav-item" data-topic="fs">File System (fs)</button>
+          <button class="nav-item" data-topic="path">Path Module</button>
+          <button class="nav-item" data-topic="http">Native HTTP Server</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">NPM & PACKAGES</h2>
+          <button class="nav-item" data-topic="npm">What is NPM?</button>
+          <button class="nav-item" data-topic="thirdparty">
+            Installing Packages
+          </button>
+          <button class="nav-item" data-topic="dotenv">
+            Env Variables (.env)
+          </button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">EXPRESS.JS (API)</h2>
+          <button class="nav-item" data-topic="express">Why Express.js?</button>
+          <button class="nav-item" data-topic="http_methods">
+            GET, POST, PUT, DELETE
+          </button>
+          <button class="nav-item" data-topic="reqres">
+            Req & Res Objects
+          </button>
+          <button class="nav-item" data-topic="postman">
+            API Testing (Postman)
+          </button>
+          <button class="nav-item" data-topic="router">Express Routers</button>
+          <button class="nav-item" data-topic="structure">
+            Project Structure
+          </button>
+          <button class="nav-item" data-topic="middleware">Middleware</button>
+          <button class="nav-item" data-topic="cors">CORS Policy</button>
+          <button class="nav-item" data-topic="error_handling">
+            Error Handling
+          </button>
+          <button class="nav-item" data-topic="statuscodes">
+            Status Codes
+          </button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">DATABASE (MYSQL)</h2>
+          <button class="nav-item" data-topic="mysql_intro">
+            Why MySQL Database?
+          </button>
+          <button class="nav-item" data-topic="mysql_install">
+            Installing MySQL
+          </button>
+          <button class="nav-item" data-topic="mysql_connect">
+            Connecting DB
+          </button>
+          <button class="nav-item" data-topic="mysql_queries">
+            Executing Queries
+          </button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">SECURITY & AUTH</h2>
+          <button class="nav-item" data-topic="bcrypt">
+            Hashing (bcrypt.js)
+          </button>
+          <button class="nav-item" data-topic="jwt">
+            JSON Web Tokens (JWT)
+          </button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">ADVANCED CONCEPTS</h2>
+          <button class="nav-item" data-topic="eventloop">
+            The Event Loop
+          </button>
+          <button class="nav-item" data-topic="events">Event Emitter</button>
+          <button class="nav-item" data-topic="streams">
+            Streams & Buffers
+          </button>
+        </section>
+      
+        <section class="nav-group">
+          <h2 class="group-title">GETTING STARTED</h2>
+          <button class="nav-item" data-topic="v8_engine">How Node.js Works (V8 Engine)</button>
+          <button class="nav-item" data-topic="blocking_nonblocking">Blocking vs Non-Blocking</button>
+          <button class="nav-item" data-topic="sync_async">Synchronous vs Asynchronous</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">CORE MODULES & DATA</h2>
+          <button class="nav-item" data-topic="os_module">OS Module</button>
+          <button class="nav-item" data-topic="url_module">URL Module</button>
+          <button class="nav-item" data-topic="crypto_module">Crypto Module</button>
+          <button class="nav-item" data-topic="timers">Timers</button>
+          <button class="nav-item" data-topic="buffer">Buffer & Binary Data</button>
+          <button class="nav-item" data-topic="child_process">Child Processes</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">NPM & PACKAGES</h2>
+          <button class="nav-item" data-topic="package_json_deep_dive">package.json Deep Dive</button>
+          <button class="nav-item" data-topic="dev_dependencies">devDependencies vs Dependencies</button>
+          <button class="nav-item" data-topic="npm_scripts">NPM Scripts</button>
+          <button class="nav-item" data-topic="semver">Semver</button>
+          <button class="nav-item" data-topic="publish_package">Publishing Your Package</button>
+          <button class="nav-item" data-topic="nodemon">Using Nodemon</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">EXPRESS.JS</h2>
+          <button class="nav-item" data-topic="express_static">Static Files Serving</button>
+          <button class="nav-item" data-topic="template_engines">Template Engines</button>
+          <button class="nav-item" data-topic="route_params">Route Parameters</button>
+          <button class="nav-item" data-topic="request_validation">Request Validation</button>
+          <button class="nav-item" data-topic="multer">File Uploads (Multer)</button>
+          <button class="nav-item" data-topic="rate_limiting">Rate Limiting</button>
+          <button class="nav-item" data-topic="helmet">Helmet.js</button>
+          <button class="nav-item" data-topic="cookie_parsing">Cookie Parsing</button>
+          <button class="nav-item" data-topic="statuscodes">Status Codes</button>
+          <button class="nav-item" data-topic="middleware">Middleware</button>
+          <button class="nav-item" data-topic="cors">CORS</button>
+          <button class="nav-item" data-topic="error_handling">Error Handling</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">DATABASE</h2>
+          <button class="nav-item" data-topic="mysql_pooling">MySQL Connection Pooling</button>
+          <button class="nav-item" data-topic="prepared_statements">Prepared Statements</button>
+          <button class="nav-item" data-topic="sequelize">ORM with Sequelize</button>
+          <button class="nav-item" data-topic="migrations_seeders">Migrations & Seeders</button>
+          <button class="nav-item" data-topic="mongodb_intro">Intro to MongoDB</button>
+          <button class="nav-item" data-topic="mongoose">Mongoose (ODM)</button>
+          <button class="nav-item" data-topic="mongoose_crud">CRUD with Mongoose</button>
+          <button class="nav-item" data-topic="sql_vs_nosql">SQL vs NoSQL</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">SECURITY & AUTH</h2>
+          <button class="nav-item" data-topic="sessions_cookies">Sessions & Cookies</button>
+          <button class="nav-item" data-topic="oauth2">OAuth2</button>
+          <button class="nav-item" data-topic="rbac">Role-Based Access Control</button>
+          <button class="nav-item" data-topic="input_sanitization">Input Sanitization</button>
+          <button class="nav-item" data-topic="passportjs">Passport.js</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">ASYNC JAVASCRIPT</h2>
+          <button class="nav-item" data-topic="callbacks">Callbacks</button>
+          <button class="nav-item" data-topic="promises">Promises</button>
+          <button class="nav-item" data-topic="async_await">Async / Await</button>
+          <button class="nav-item" data-topic="promise_methods">Promise.all & race</button>
+          <button class="nav-item" data-topic="async_errors">Async Error Handling</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">TESTING</h2>
+          <button class="nav-item" data-topic="why_testing">Why Testing Matters</button>
+          <button class="nav-item" data-topic="jest_unit">Unit Testing with Jest</button>
+          <button class="nav-item" data-topic="integration_testing">Integration Testing</button>
+          <button class="nav-item" data-topic="supertest">Supertest API</button>
+          <button class="nav-item" data-topic="mocking_spies">Mocking & Spies</button>
+          <button class="nav-item" data-topic="code_coverage">Code Coverage</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">REAL-TIME & COMM</h2>
+          <button class="nav-item" data-topic="websockets_intro">WebSockets Intro</button>
+          <button class="nav-item" data-topic="socketio">Socket.io</button>
+          <button class="nav-item" data-topic="sse">Server-Sent Events (SSE)</button>
+          <button class="nav-item" data-topic="polling_vs_websockets">Polling vs WebSockets</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">FILE HANDLING</h2>
+          <button class="nav-item" data-topic="aws_s3">Uploading to AWS S3</button>
+          <button class="nav-item" data-topic="csv_files">CSV Files</button>
+          <button class="nav-item" data-topic="pdfkit">PDF Generation (PDFKit)</button>
+          <button class="nav-item" data-topic="sharp">Image Processing (Sharp)</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">DEPLOYMENT & DEVOPS</h2>
+          <button class="nav-item" data-topic="environments">Environment Stages</button>
+          <button class="nav-item" data-topic="pm2">PM2 Process Manager</button>
+          <button class="nav-item" data-topic="deploy_paas">Deploy to Render/Railway</button>
+          <button class="nav-item" data-topic="deploy_vps">Deploy to VPS</button>
+          <button class="nav-item" data-topic="nginx_proxy">Nginx Reverse Proxy</button>
+          <button class="nav-item" data-topic="cicd">CI/CD Basics</button>
+          <button class="nav-item" data-topic="docker_nodejs">Docker with Node.js</button>
+          <button class="nav-item" data-topic="logging">Logging (Winston)</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">PERFORMANCE & ARCHITECTURE</h2>
+          <button class="nav-item" data-topic="redis_caching">Caching with Redis</button>
+          <button class="nav-item" data-topic="cluster_module">Cluster Module</button>
+          <button class="nav-item" data-topic="worker_threads">Worker Threads</button>
+          <button class="nav-item" data-topic="microservices">Microservices Intro</button>
+          <button class="nav-item" data-topic="rest_vs_graphql">REST vs GraphQL</button>
+          <button class="nav-item" data-topic="graphql_api">Building a GraphQL API</button>
+        </section>
+
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <div id="lesson" class="lesson"></div>
+    </main>
+
+    <script src="nodejs.js"></script>
+  </body>
+</html>

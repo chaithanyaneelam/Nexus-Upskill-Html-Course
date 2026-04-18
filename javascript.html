@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StudBridge - Learn JavaScript from beginner to pro level with interactive examples."
+    />
+    <title>StudBridge | JavaScript Learning Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="javascript.css" />
+  </head>
+  <body>
+    <header class="mobile-header">
+      <h1 class="brand mobile-brand">StudBridge</h1>
+      <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="brand">StudBridge</h1>
+        <button id="close-btn" class="close-btn" aria-label="Close Menu">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="28"
+            height="28"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <section class="nav-group">
+          <h2 class="group-title">GETTING STARTED</h2>
+          <button class="nav-item active" data-topic="intro">
+            What is JS?
+          </button>
+          <button class="nav-item" data-topic="variables">
+            Variables (let/const)
+          </button>
+          <button class="nav-item" data-topic="datatypes">Data Types</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">CONTROL FLOW</h2>
+          <button class="nav-item" data-topic="conditionals">
+            If/Else & Switch
+          </button>
+          <button class="nav-item" data-topic="loops">Loops (for/while)</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">FUNCTIONS</h2>
+          <button class="nav-item" data-topic="functions">
+            Basic Functions
+          </button>
+          <button class="nav-item" data-topic="arrow">Arrow Functions</button>
+          <button class="nav-item" data-topic="closures">Closures</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">DATA STRUCTURES</h2>
+          <button class="nav-item" data-topic="arrays">Arrays & Methods</button>
+          <button class="nav-item" data-topic="objects">Objects & This</button>
+          <button class="nav-item" data-topic="destructuring">
+            Destructuring
+          </button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">THE DOM</h2>
+          <button class="nav-item" data-topic="dom">DOM Selection</button>
+          <button class="nav-item" data-topic="manipulation">
+            Manipulation
+          </button>
+          <button class="nav-item" data-topic="events">Event Listeners</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">ASYNC JAVASCRIPT</h2>
+          <button class="nav-item" data-topic="callbacks">Callbacks</button>
+          <button class="nav-item" data-topic="promises">Promises</button>
+          <button class="nav-item" data-topic="asyncawait">
+            Async / Await
+          </button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">PRO CONCEPTS</h2>
+          <button class="nav-item" data-topic="classes">Classes & OOP</button>
+          <button class="nav-item" data-topic="modules">ES6 Modules</button>
+          <button class="nav-item" data-topic="api">Fetch API</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">BROWSER API & UTILS</h2>
+          <button class="nav-item" data-topic="storage">Web Storage</button>
+          <button class="nav-item" data-topic="trycatch">Error Handling</button>
+          <button class="nav-item" data-topic="regex">RegEx Patterns</button>
+        </section>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <div id="lesson" class="lesson"></div>
+    </main>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

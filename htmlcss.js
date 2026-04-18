@@ -1,4 +1,4 @@
-﻿const topics = {
+const topics = {
   semantic: {
     title: "Semantic HTML5 Structures",
     why: "Think of HTML as the skeleton of a building. If you use the wrong materials (divs), the building (SEO/Accessibility) falls apart.",
@@ -8,7 +8,7 @@
       "Use <strong>&lt;aside&gt;</strong> for sidebars.",
       "Use <strong>&lt;header&gt;</strong> and <strong>&lt;footer&gt;</strong> logically."
     ],
-    code: `<main>\n  <section class="hero">\n    <h1>Welcome to Nexus</h1>\n  </section>\n</main>`,
+    code: `<main>\n  <section class="hero">\n    <h1>Welcome to StudBridge</h1>\n  </section>\n</main>`,
     pitfall: "Using &lt;div&gt; for everything makes it impossible for screen readers and search engines to understand the page structure.",
     challenge: ["Build a blog layout using zero generic div tags."]
   },

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StudBridge - Learn React with clear explanations and simple examples."
+    />
+    <title>StudBridge | React Learning Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="react.css" />
+  </head>
+  <body>
+    <header class="mobile-header">
+      <h1 class="brand mobile-brand">StudBridge</h1>
+      <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="brand">StudBridge</h1>
+        <button id="close-btn" class="close-btn" aria-label="Close Menu">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="28"
+            height="28"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <section class="nav-group">
+          <h2 class="group-title">GETTING STARTED</h2>
+          <button class="nav-item active" data-topic="intro">
+            What is React?
+          </button>
+          <button class="nav-item" data-topic="setup">Environment Setup</button>
+          <button class="nav-item" data-topic="jsx">JSX Syntax</button>
+          <button class="nav-item" data-topic="components">
+            Components Architecture
+          </button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">CORE CONCEPTS</h2>
+          <button class="nav-item" data-topic="props">Props & Data Flow</button>
+          <button class="nav-item" data-topic="state">State (useState)</button>
+          <button class="nav-item" data-topic="conditional">
+            Conditional Rendering
+          </button>
+          <button class="nav-item" data-topic="events">Event Handling</button>
+          <button class="nav-item" data-topic="lists">Lists & Keys</button>
+          <button class="nav-item" data-topic="forms">Controlled Forms</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">ADVANCED HOOKS</h2>
+          <button class="nav-item" data-topic="effect">
+            Effects (useEffect)
+          </button>
+          <button class="nav-item" data-topic="ref">Refs (useRef)</button>
+          <button class="nav-item" data-topic="context">Context API</button>
+          <button class="nav-item" data-topic="memo">Memoization</button>
+          <button class="nav-item" data-topic="custom">Custom Hooks</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">PRO PATTERNS</h2>
+          <button class="nav-item" data-topic="router">React Router</button>
+          <button class="nav-item" data-topic="suspense">
+            Suspense & Lazy
+          </button>
+          <button class="nav-item" data-topic="portals">Portals</button>
+        </section>
+
+        <section class="nav-group">
+          <h2 class="group-title">STATE ECOSYSTEM</h2>
+          <button class="nav-item" data-topic="redux">Redux Toolkit</button>
+          <button class="nav-item" data-topic="query">React Query</button>
+        </section>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <div id="lesson" class="lesson"></div>
+    </main>
+
+    <script src="react.js"></script>
+  </body>
+</html>
